@@ -95,7 +95,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 });*/
 
-angular.module('ionicApp', ['ionic'])
+var mod = angular.module('ionicApp', ['ionic'])
+
+.run(function($ionicPlatform) {
+     $ionicPlatform.ready(function() {
+                          // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+                          // for form inputs)
+                          if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+                          cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+                          cordova.plugins.Keyboard.disableScroll(true);
+                          
+                          }
+                          if (window.StatusBar) {
+                          // org.apache.cordova.statusbar required
+                          StatusBar.styleLightContent();
+                          }
+                          });
+     })
+
 
 .config(function($stateProvider, $urlRouterProvider) {
         
@@ -155,28 +172,21 @@ angular.module('ionicApp', ['ionic'])
                }
                }
                })
-        .state('tabs.contact', {
-               url: '/contact',
-               views: {
-               'contact-tab': {
-               templateUrl: 'templates/contact.html'
-               }
-               }
-               });
+
         
         
         $urlRouterProvider.otherwise('/sign-in');
         
         })
 
-.controller('SignInCtrl', function($scope, $state) {
-            
-            $scope.signIn = function(user) {
-            console.log('Sign-In', user);
-            $state.go('tabs.home');
-            };
-            
-            })
+//.controller('SignInCtrl', function($scope, $state) {
+//            
+//            $scope.signIn = function(user) {
+//            console.log('Sign-In', user);
+//            $state.go('tabs.home');
+//            };
+//            
+//            })
 
 .controller('HomeTabCtrl', function($scope) {
             console.log('HomeTabCtrl');

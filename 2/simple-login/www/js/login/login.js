@@ -14,6 +14,12 @@ app
 			$scope.showSpinner = false;
 			$scope.hide();
 			console.log(JSON.stringify($state.get()));
+               
+               var brother = {
+               broname : "Nizaam",
+               address :" 333 Lincoln St, SC"
+               };
+               createBrother(brother);
 			$state.go('tab.chats');
 		},function(error,user){
 			$scope.hide();

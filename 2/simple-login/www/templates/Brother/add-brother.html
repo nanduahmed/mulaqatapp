@@ -1,0 +1,116 @@
+<ion-view view-title="Add Brother">
+<ion-nav-buttons side="left">
+<button class="button icon ion-android-cancel" ng-click="goBack()">
+</button>
+</ion-nav-buttons>
+<!--<ion-nav-buttons side="right">-->
+<!--    <button class="button icon ion-ios-checkmark" ng-click="saveBrother(name)">-->
+<!--    </button>-->
+<!--</ion-nav-buttons>-->
+<ion-content class="padding">
+<div class="list">
+	<button class="button icon ion-archive" ng-click="saveBrother(brother)">Save
+	</button>
+    <div>*</div>
+
+	<label class="item item-input">
+		<span class="input-label">Name</span>
+		<input type="text" ng-model="brother.name">
+	</label>
+
+	<label class="item item-input">
+		<span class="input-label">Phone</span>
+		<input type="text" ng-model="brother.phone">
+	</label>
+	<div class="item">
+
+		<span class="input-label">Address</span>
+		<br></br>
+		<label class="item item-input">
+			<input type="text" placeholder="Address 1" ng-model="brother.add1">
+		</label>
+		<label class="item item-input">
+			<input type="text" placeholder="Address 2" ng-model="brother.add2">
+		</label>
+		<label class="item item-input">
+			<input type="text" placeholder="City" ng-model="brother.city">
+		</label>
+		<label class="item item-input">
+			<input type="text" placeholder="State" ng-model="brother.state">
+		</label>
+		<label class="item item-input">
+			<input type="text" placeholder="ZIP" ng-model="brother.zip">
+		</label>
+	</div>
+	<label class="item item-input">
+		<span class="input-label" ng-model="brother.comment">Comments</span>
+		<input type="text">
+	</label>
+	<label class="item item-input">
+		<span class="input-label">Three Days</span>
+		<label class="toggle">
+			<input type="checkbox" ng-model="brother.threeday">
+			<div class="track">
+				<div class="handle"></div>
+			</div>
+		</label>
+	</label>
+	<label class="item item-input">
+		<span class="input-label">Forty Days</span>
+		<label class="toggle">
+			<input type="checkbox" ng-model="brother.fortyday">
+			<div class="track">
+				<div class="handle"></div>
+			</div>
+		</label>
+	</label>
+	<label class="item item-input">
+		<span class="input-label">Four Months</span>
+		<label class="toggle">
+			<input type="checkbox" ng-model="brother.fourmonts">
+			<div class="track">
+				<div class="handle"></div>
+			</div>
+		</label>
+	</label>
+	<label class="item item-input">
+		<span class="input-label">Foreign</span>
+		<label class="toggle">
+			<input type="checkbox" ng-model="brother.foreign">
+			<div class="track">
+				<div class="handle"></div>
+			</div>
+		</label>
+	</label>
+	<label class="item item-input">
+		<span class="input-label">Masturaat 3 Days</span>
+		<label class="toggle">
+			<input type="checkbox" ng-model="brother.masturat3day">
+			<div class="track">
+				<div class="handle"></div>
+			</div>
+		</label>
+	</label>
+    <label class="item item-input">
+        <span class="input-label" >Masturaat 40 Days</span>
+        <label class="toggle">
+            <input type="checkbox" ng-model="brother.masturat40day">
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
+                </label>
+    </label>
+    <label class="item item-input">
+        <span class="input-label" >Student</span>
+        <label class="toggle">
+            <input type="checkbox" ng-model="brother.student">
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
+                </label>
+    </label>
+
+</div>
+
+</ion-content>
+</ion-view>

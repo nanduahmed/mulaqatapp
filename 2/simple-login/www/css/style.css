@@ -18,3 +18,7 @@
 /*    background-color:red;*/
 }
 
+btnToRight {
+/*    right: 10px;*/
+    position: absolute;
+}

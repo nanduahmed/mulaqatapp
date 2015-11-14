@@ -1,26 +1,30 @@
-angular.module('starter.controllers', [])
+var app = angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
-            $scope.items = [
-                            { id: 0 },
-                            { id: 1 },
-                            { id: 2 },
-                            { id: 3 },
-                            { id: 4 },
-                            { id: 5 },
-                            { id: 6 },
-                            { id: 7 },
-                            { id: 8 },
-                            { id: 9 },
-                            { id: 10 },
-                            { id: 11 },
-                            { id: 12 }
-                            ];
-            
-            $scope.test = function() {
-            console.log("sdfwefe");
-            }
-            })
+.controller('DashCtrl', function($scope, $state) {
+	$scope.items = [
+	{ id: 0 },
+	{ id: 1 },
+	{ id: 2 },
+	{ id: 3 },
+	{ id: 4 },
+	{ id: 5 },
+	{ id: 6 },
+	{ id: 7 },
+	{ id: 8 },
+	{ id: 9 },
+	{ id: 10 },
+	{ id: 11 },
+	{ id: 12 }
+	];
+
+	$scope.test = function() {
+		console.log("sdfwefe");
+	}
+
+	$scope.addBroButton = function() {
+		$state.go("addbrother");
+	}
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
 	// With the new view caching in Ionic, Controllers are only called
@@ -45,4 +49,4 @@ angular.module('starter.controllers', [])
 		$scope.settings = {
 			enableFriends: true
 		};
-    });
+	});

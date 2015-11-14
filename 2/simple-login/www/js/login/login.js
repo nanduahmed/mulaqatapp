@@ -1,27 +1,21 @@
 app
 
-.controller('LoginCtrl', function($scope,  $ionicLoading, $state) {
+.controller('LoginCtrl', function($scope,  $ionicLoading, $state, parseFactory) {
 	$scope.data = {};
 
 	$scope.login = function() {
 		console.log("LOGIN user: " + $scope.data.username + " - PW: " + $scope.data.password);
-
-		initializeParse();
+		parseFactory.initParse();
 		$scope.show();
 
-		loginUsingParse($scope.data.username,$scope.data.password)
+		parseFactory.login($scope.data.username,$scope.data.password)
 		.then (function(user){
 			$scope.showSpinner = false;
 			$scope.hide();
-			console.log(JSON.stringify($state.get()));
-               
-               var brother = {
-               broname : "Nizaam",
-               address :" 333 Lincoln St, SC"
-               };
-               createBrother(brother);
 			$state.go('tab.chats');
-		},function(error,user){
+		},function(error){
+			console.log("User and Error "+JSON.stringify(error));
+			alert("Error "+error.message);
 			$scope.hide();
 		});
 	}

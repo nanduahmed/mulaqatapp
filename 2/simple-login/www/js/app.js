@@ -59,7 +59,7 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
 				}
 			}
 		})
-		
+
 		.state('tab.chat-detail', {
 			url: '/chats/:chatId',
 			views: {
@@ -90,6 +90,16 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
 			url: '/addbrother',
 			templateUrl: 'templates/brother/add-brother.html',
 			controller: 'addBrotherCtrl'
+		})
+
+		.state('tab.brother-detail', {
+			url: '/brother/:brotherId',
+			views: {
+				'tab-dash': {
+					templateUrl: 'templates/brother/detail-brother.html',
+					controller: 'brotherDetailCtrl'
+				}
+			}
 		})
 
 

@@ -1,0 +1,94 @@
+<ion-view view-title="{{broToShow.name}}">
+
+<ion-content class="padding">
+<div class="list">
+	<label class="item item-input">
+		<span class="input-label">Name</span>
+		<p>{{broToShow.name}}</p>
+	</label>
+
+	<label class="item item-input">
+		<span class="input-label">Phone</span>
+		<p>{{brother.get("phone")}}</p>
+	</label>
+
+	<div class="item">
+
+		<span class="input-label">Address</span>
+		<p>{{brother.get("add1")}},{{brother.get("add2")}},{{brother.get("city")}}, {{brother.get("state")}}</p>
+	</div>
+	<label class="item item-input">
+		<span class="input-label">Comments</span>
+		<ion-item class="item-text-wrap">
+		{{brother.get("comment")}}
+	</ion-item>
+</label>
+<label class="item item-input">
+	<span class="input-label">Three Days</span>
+	<label class="toggle">
+		<input type="checkbox" ng-model="broToShow.threeday">
+		<div class="track">
+			<div class="handle"></div>
+		</div>
+	</label>
+</label>
+<label class="item item-input">
+	<span class="input-label">Forty Days</span>
+	<label class="toggle">
+		<input type="checkbox" ng-model="broToShow.fortyday">
+		<div class="track">
+			<div class="handle"></div>
+		</div>
+	</label>
+
+</label>
+<label class="item item-input">
+	<span class="input-label">Four Months</span>
+	<label class="toggle">
+		<input type="checkbox" ng-model="broToShow.fourmonts">
+		<div class="track">
+			<div class="handle"></div>
+		</div>
+	</label>
+</label>
+<label class="item item-input">
+	<span class="input-label">Foreign</span>
+	<label class="toggle">
+		<input type="checkbox" ng-model="broToShow.foreign">
+		<div class="track">
+			<div class="handle"></div>
+		</div>
+	</label>
+</label>
+<label class="item item-input">
+	<span class="input-label">Masturaat 3 Days</span>
+	<label class="toggle">
+		<input type="checkbox" ng-model="broToShow.masturat3day">
+		<div class="track">
+			<div class="handle"></div>
+		</div>
+	</label>
+</label>
+<label class="item item-input">
+	<span class="input-label" >Masturaat 40 Days</span>
+	<label class="toggle">
+		<input type="checkbox" ng-model="broToShow.masturat40day">
+		<div class="track">
+			<div class="handle"></div>
+		</div>
+	</label>
+</label>
+<label class="item item-input">
+	<span class="input-label" >Student</span>
+	<label class="toggle">
+		<input type="checkbox" ng-model="broToShow.student">
+		<div class="track">
+			<div class="handle"></div>
+		</div>
+	</label>
+</label>
+
+</div>
+
+</ion-content>
+</ion-view>

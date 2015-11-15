@@ -3,18 +3,22 @@
         <button class="button icon ion-plus-round" ng-click="addBroButton() ">
         </button>
     </ion-nav-buttons>
+    <ion-nav-buttons side="left">
+        <button class="button icon ion-ios-refresh-empty" ng-click="refresh() ">
+        </button>
+    </ion-nav-buttons>
     <ion-content class="padding">
         
         <ion-list>
-            <ion-item ng-repeat="item in items">
+            <ion-item ng-repeat="item in items" type="item-text-wrap" href="#/tab/brother/{{item.id}}">
                 <div>
-                    <p>Name: {{item["id"]}}</p>
-                    <p>Address: {{item["id"]}}</p>
+                    <p>Name: {{item.get("broname");}}</p>
+                    <p>Address: {{item.get("add1")}},{{item.get("add2")}},{{item.get("city")}}, {{item.get("state")}} </p>
                     <div class="listAddr">
                         <button class="button-small icon ion-ios-telephone smallIcon" ng-click="test()"></button>
                         <button class="button-small icon ion-ios-location smallIcon" ng-click="test()"></button>
                     </div>
-                    <p>Comments: {{item["id"]}}</p>
+                    <p>Comments: {{item.get("comment")}}</p>
                 </div>
             </ion-item>
         </ion-list>

@@ -18,12 +18,13 @@ app
 	const active = "active";
 	const date = "date";
 	const student = "student";
+    const userid = "userid";
 
 	$scope.goBack = function() {
 		console.log("Go Back");
 		$state.go("tab.dash");
 	}
-
+           
 	$scope.saveBrother = function(brother) {
 		var todaysDt = new Date();
 		if(validateBrother(brother)) {
@@ -52,8 +53,8 @@ app
 			parseFactory.saveBrotherToParse(brotherObj)
 			.then(function(bro){
 				alert("Saved Information");
-			}, function(bro,err){
-				alert("Problem Saving Info");
+			}, function(err){
+				alert("Cannot Save "+err.message);
 			})
 
 		} else {

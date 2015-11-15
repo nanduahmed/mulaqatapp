@@ -1,7 +1,11 @@
 app
 
 .controller('LoginCtrl', function($scope,  $ionicLoading, $state, parseFactory) {
-	$scope.data = {};
+            $scope.data = {"username":"nandu", "password":"pass"};
+            $scope.user = {};
+            $scope.userid = function() {
+            return $scope.user;
+            }
 
 	$scope.login = function() {
 		console.log("LOGIN user: " + $scope.data.username + " - PW: " + $scope.data.password);
@@ -12,7 +16,8 @@ app
 		.then (function(user){
 			$scope.showSpinner = false;
 			$scope.hide();
-			$state.go('tab.chats');
+            console.log("User"+JSON.stringify(user));
+			$state.go('tab.dash');
 		},function(error){
 			console.log("User and Error "+JSON.stringify(error));
 			alert("Error "+error.message);

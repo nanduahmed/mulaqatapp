@@ -48,6 +48,7 @@ app
 			return deferred.promise;
 		},
 		getAllBrothers: function() {
+         initializeParse();
 			var deferred = $q.defer();
 			var Brother = Parse.Object.extend("Brother");
 			var query = new Parse.Query(Brother);
@@ -109,10 +110,10 @@ app
 
 	});
 
-	//function initializeParse() {
-		//	Parse.initialize("9wRXecWCzaavrNKO74jz1e0WCH78wS4kTadYsn3U", "5Jbr4LUv83VoOQJxzOrgV80PUwPMzlbtlkvClHk1");
-		//}
-		//
+	function initializeParse() {
+			Parse.initialize("9wRXecWCzaavrNKO74jz1e0WCH78wS4kTadYsn3U", "5Jbr4LUv83VoOQJxzOrgV80PUwPMzlbtlkvClHk1");
+		}
+		
 		//function loginUsingParse(username, password) {
 			//	console.log("loginUsingParse");
 			//	return new Promise(function(successful,errorful) {

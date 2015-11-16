@@ -5,7 +5,6 @@ var app = angular.module('starter.controllers', [])
 
 	$scope.items = [];
 
-
 	$scope.addBroButton = function() {
 		$state.go("addbrother");
 	}
@@ -19,12 +18,18 @@ var app = angular.module('starter.controllers', [])
 		parseFactory.getAllBrothers()
 		.then(function(brothers){
 			console.log("Brothers "+JSON.stringify(brothers));
-			$scope.items= brothers;
+            $scope.items = brothers;
+              for (var i = 0 ; i < brothers.length ; i++ ) {
+                var b = brothers[i];
+              var p = b.get("phone");
+              $scope.items[i].phonen = p;
+              }
+
 		}, function(err){
 			alert("Cannot Save "+err.message);
 		})
 	}
-
+            
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

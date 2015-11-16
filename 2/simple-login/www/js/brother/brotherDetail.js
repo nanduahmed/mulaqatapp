@@ -10,7 +10,8 @@ app
 		var i = parseFactory.getBrotherDetail($stateParams.brotherId);
 		console.log(JSON.stringify(i));
 		$scope.brother = i;
-		$scope.broToShow.name = i.get("broname");
+        $scope.broToShow.name = i.get("broname");
+		$scope.broToShow.phone = i.get("phone");
 		$scope.broToShow.threeday = i.get("threeday");
 		$scope.broToShow.fortyday = i.get("fortyday");
 		$scope.broToShow.fourmonts = i.get("fourmonts");
@@ -19,8 +20,5 @@ app
 		$scope.broToShow.masturat40day = i.get("masturat40day");
 		$scope.broToShow.student = i.get("student");
 	})
-
-
-
 
 })

@@ -15,7 +15,7 @@
                     <p>Name: {{item.get("broname");}}</p>
                     <p>Address: {{item.get("add1")}},{{item.get("add2")}},{{item.get("city")}}, {{item.get("state")}} </p>
                     <div class="listAddr">
-                        <button class="button-small icon ion-ios-telephone smallIcon" ng-click="test()"></button>
+                        <a class="button-small icon ion-ios-telephone" ng-href="tel:{{item.phonen}}"></a>
                         <button class="button-small icon ion-ios-location smallIcon" ng-click="test()"></button>
                     </div>
                     <p>Comments: {{item.get("comment")}}</p>

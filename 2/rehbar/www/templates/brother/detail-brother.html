@@ -1,4 +1,8 @@
 <ion-view view-title="{{broToShow.name}}">
+<ion-nav-buttons side="right">
+<button class="button icon ion-edit" ng-click="editBrother(broToShow)">
+</button>
+</ion-nav-buttons>
 
 <ion-content class="padding">
 <div class="list">
@@ -6,15 +10,13 @@
 		<span class="input-label">Name</span>
 		<p>{{broToShow.name}}</p>
 	</label>
-
-
 	<div class="item item-input">
 		<span class="input-label">Phone</span>
 		<p>{{brother.get("phone")}}</p>
-        <p style="width:40px;"></p>
-        <a class="button icon ion-ios-telephone" ng-href="tel:{{broToShow.phone}}" style="left:10px;"></a>
+		<p style="width:40px;"></p>
+		<a class="button icon ion-ios-telephone" ng-href="tel:{{broToShow.phone}}" style="left:10px;"></a>
 	</div>
-    
+
 	<div class="item">
 		<span class="input-label">Address</span>
 		<p>{{brother.get("add1")}},{{brother.get("add2")}},{{brother.get("city")}}, {{brother.get("state")}}</p>

@@ -21,4 +21,9 @@ app
 		$scope.broToShow.student = i.get("student");
 	})
 
+		$scope.editBrother = function() {
+			$state.go("tab.brother-edit",{"brotherId":$stateParams.brotherId},null);
+		}
+
+
 })

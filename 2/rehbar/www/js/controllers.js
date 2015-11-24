@@ -49,7 +49,6 @@ var app = angular.module('starter.controllers', [])
 				alert("Plugin error: "+ error);
 				}, defaults);
 			}
-
 		}
 
 })

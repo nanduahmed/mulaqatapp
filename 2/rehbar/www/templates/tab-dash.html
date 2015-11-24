@@ -1,0 +1,37 @@
+<ion-view view-title="Brother List">
+<ion-nav-buttons side="right">
+<button class="button icon ion-plus-round" ng-click="addBroButton() ">
+</button>
+</ion-nav-buttons>
+<ion-nav-buttons side="left">
+<button class="button icon ion-ios-refresh-empty" ng-click="refresh() ">
+</button>
+</ion-nav-buttons>
+<ion-content class="padding">
+
+<ion-list>
+<ion-item ng-repeat="item in items" type="item-text-wrap" href="#/tab/brother/{{item.id}}">
+    <div class="nameAddress">
+	<ul>
+		<li><h2 id="bname">{{item.get("broname");}}</h2></li>
+		<li><p id="address">{{item.get("add1")}},{{item.get("add2")}},{{item.get("city")}}, {{item.get("state")}} </p></li>
+		<li><p class="item-text-wrap comment" item-height="250">
+			{{item.get("comment")}}</p></li>
+			<li></li>
+		</ul>
+	</div>
+	<div class="listAddr">
+		<ul>
+			<li>
+				<a class="button button-small button-icon icon ion-ios-telephone-outline smallIcon" ng-href="tel:{{item.phonen}}"></a>
+			</li>
+			<li><br></li>
+			<li>
+				<button class="button button-small button-icon icon ion-ios-location-outline smallIcon" ng-click="navigate(item.addr)"></button>
+			</li>
+		</ul>
+	</div>
+
+</ion-item>
+</ion-list>
+</ion-view>

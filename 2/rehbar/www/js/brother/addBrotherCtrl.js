@@ -19,50 +19,62 @@ app
 	const date = "date";
 	const student = "student";
     const userid = "userid";
+            
+    $scope.brother = {};
 
 	$scope.goBack = function() {
 		console.log("Go Back");
+            clearForm();
 		$state.go("tab.dash");
 	}
-           
-	$scope.saveBrother = function(brother) {
-		var todaysDt = new Date();
-		if(validateBrother(brother)) {
-			console.log(brother);
-			var name = brother.name;
-			var brotherObj = {
-				broname: brother.name,
-				add1: brother.add1,
-				add2: brother.add2,
-				city: brother.city,
-				state: brother.state,
-				country: brother.country,
-				phone: brother.phone,
-				comment: brother.comment,
-				threeday: brother.threeday,
-				fortyday:brother.fortyday,
-				fourmonts:brother.fourmonts,
-				foreign:brother.foreign,
-				masturat3day:brother.masturat3day,
-				masturat40day: brother.masturat40day,
-				student: brother.student,
-				date: todaysDt
-			}
-			var objWithDefaultValues = assignDefaultValues(brotherObj);
-			console.log(objWithDefaultValues);
-			parseFactory.saveBrotherToParse(brotherObj)
-			.then(function(bro){
-				alert("Saved Information");
-			}, function(err){
-				alert("Cannot Save "+err.message);
-			})
-
-		} else {
-			console.log("else "+brother);
-			alert("Please fill Name");
-		}
-
-	}
+            
+    $scope.saveBrother2 = function() {
+        var todaysDt = new Date();
+        if(validateBrother($scope.brother)) {
+        console.log($scope.brother);
+        
+        var name = $scope.brother.name;
+        var brotherObj = {
+            broname: $scope.brother.name,
+            add1: $scope.brother.add1,
+            add2: $scope.brother.add2,
+            city: $scope.brother.city,
+            state: $scope.brother.state,
+            country: $scope.brother.country,
+            phone: $scope.brother.phone,
+            comment: $scope.brother.comment,
+            threeday: $scope.brother.threeday,
+            fortyday:$scope.brother.fortyday,
+            fourmonts:$scope.brother.fourmonts,
+            foreign:$scope.brother.foreign,
+            masturat3day:$scope.brother.masturat3day,
+            masturat40day: $scope.brother.masturat40day,
+            student: $scope.brother.student,
+            date: todaysDt
+        }
+        var objWithDefaultValues = assignDefaultValues(brotherObj);
+        console.log(objWithDefaultValues);
+        parseFactory.saveBrotherToParse(brotherObj)
+        .then(function(bro){
+              alert("Saved");
+              }, function(err){
+              alert("Cannot Save "+err.message);
+              })
+        
+        } else {
+            console.log("else "+brother);
+            alert("Please fill Name");
+        }
+    
+    }
+    
+    function clearForm() {
+        $scope.brother.name = "";
+        $scope.brother.phone = "";
+        $scope.brother.add1 = "";
+        $scope.brother.add2 = "";
+        $scope.brother.comment = "";
+    }
 
 	function validateBrother(brother) {
 		if (typeof(brother) == "undefined") {

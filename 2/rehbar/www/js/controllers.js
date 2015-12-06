@@ -24,6 +24,7 @@ var app = angular.module('starter.controllers', [])
               var p = b.get("phone");
               $scope.items[i].phonen = p;
               $scope.items[i].addr = b.get("add1")+","+b.get("add2")+","+b.get("city")+","+b.get("state");
+              $scope.update = b.get("updatedAt");
               }
 
 		}, function(err){

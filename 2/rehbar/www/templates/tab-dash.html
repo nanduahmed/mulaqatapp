@@ -13,7 +13,7 @@
 <ion-item ng-repeat="item in items" type="item-text-wrap" href="#/tab/brother/{{item.id}}">
     <div class="nameAddress">
 	<ul>
-		<li><h2 id="bname">{{item.get("broname");}}</h2></li>
+        <li><h2 id="bname">{{item.get("broname");}}</h2><p id="update">  </p><p id="update">Updated: {{item.get("updatedAt").toLocaleDateString();;}}</p></li>
 		<li><p id="address">{{item.get("add1")}},{{item.get("add2")}},{{item.get("city")}}, {{item.get("state")}} </p></li>
 		<li><p class="item-text-wrap comment" item-height="250">
 			{{item.get("comment")}}</p></li>

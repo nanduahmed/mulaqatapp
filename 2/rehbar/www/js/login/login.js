@@ -1,7 +1,8 @@
 app
 
 .controller('LoginCtrl', function($scope,  $ionicLoading, $state, parseFactory) {
-            $scope.data = {"username":"nandu", "password":"pass"};
+            $scope.data = {"username":"", "password":""};
+//            $scope.data = {"username":"nandu", "password":"pass"};
             $scope.user = {};
             $scope.userid = function() {
             return $scope.user;

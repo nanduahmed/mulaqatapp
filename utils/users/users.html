@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="http://www.parsecdn.com/js/parse-1.6.7.min.js"></script>
+<script src="users.js"></script>
+<body>
+
+<div ng-app="rehbarUserCreator" ng-controller="users">
+ 
+<p>Enter Username and Password to be created for masjid</p>
+<p>Username  <input type="text" ng-model="username"></p>
+<p>Password  <input type="text" ng-model="password"></p>
+<p>Re-enter Password  <input type="text" ng-model="password2"></p>
+
+<p>Email  <input type="text" ng-model="email"></p>
+
+<button ng-click="createUser()">Create User</button>
+<p ng-bind="username"></p>
+
+<p>{{ result}}</p>
+
+</div>
+
+</body>
+</html>

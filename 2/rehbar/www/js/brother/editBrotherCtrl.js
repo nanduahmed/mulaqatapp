@@ -27,12 +27,11 @@ app
 	})
 
 	$scope.updateBrother = function() {
-		alert("SSaving");
 		setValues();
 		parseFactory.updateBrotherToParse($scope.brother).then(function(obj) {
-			alert("Update "+JSON.stringify(obj));
+			alert("Saved");
 		}, function(err, obj) {
-			alert("Update error "+JSON.stringify(obj));
+			alert("Save error "+JSON.stringify(obj));
 		});
 	}
 

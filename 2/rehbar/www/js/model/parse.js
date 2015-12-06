@@ -66,6 +66,7 @@ app
 			var deferred = $q.defer();
 			var Brother = Parse.Object.extend("Brother");
 			var query = new Parse.Query(Brother);
+            query.ascending("broname");
 			var uid = $window.localStorage["uid"];
 			query.equalTo("userid", uid);
 			query.find({
